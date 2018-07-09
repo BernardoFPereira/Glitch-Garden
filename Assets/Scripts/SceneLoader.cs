@@ -9,7 +9,14 @@ public class SceneLoader : MonoBehaviour
 
     void Start()
     {
-        Invoke("LoadNextScene", autoLoadNextLevelAfter);
+        if(autoLoadNextLevelAfter == 0)
+        {
+            Debug.Log("Scene auto load disabled");
+        }
+        else
+        {
+            Invoke("LoadNextScene", autoLoadNextLevelAfter);
+        }
     }
 
     public void LoadScene(string name)
@@ -25,7 +32,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
