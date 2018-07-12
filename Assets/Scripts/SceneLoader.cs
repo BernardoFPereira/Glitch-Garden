@@ -9,9 +9,9 @@ public class SceneLoader : MonoBehaviour
 
     void Start()
     {
-        if (autoLoadNextLevelAfter == 0)
+        if (autoLoadNextLevelAfter <= 0)
         {
-            Debug.Log("Scene auto load disabled");
+            Debug.Log("Scene auto load disabled. Usa a positive number in seconds");
         }
         else
         {

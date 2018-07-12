@@ -14,7 +14,6 @@ public class OptionsController : MonoBehaviour
 	void Start ()
     {
         musicManager = GameObject.FindObjectOfType<MusicManager>();
-
         volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
         difficultySlider.value = PlayerPrefsManager.GetDifficulty();
     }
