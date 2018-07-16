@@ -26,7 +26,7 @@ public class Attacker : MonoBehaviour
 
     void OnTriggerEnter2D()
     {
-        Debug.Log(name + " trigger enter");
+        
     }
 
     public void SetSpeed(float speed)
@@ -45,7 +45,6 @@ public class Attacker : MonoBehaviour
                 health.DealDamage(damage);
             }
         }
-
     }
 
     public void Attack (GameObject obj)
