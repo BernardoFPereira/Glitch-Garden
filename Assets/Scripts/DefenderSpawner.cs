@@ -8,7 +8,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private GameObject parent;
 
-    //Find parent, create one if none available.
+    // Create parent if necessary
     void Start()
     {
         parent = GameObject.Find("Defenders");
@@ -19,7 +19,7 @@ public class DefenderSpawner : MonoBehaviour
         }
     }
 
-    // Instantiate selected Defender at roundedPos position.
+    // Instantiate selected Defender at rounded position
     void OnMouseDown()
     {
         Vector2 rawPos = CalculateWorldPointOfMouseClick();
