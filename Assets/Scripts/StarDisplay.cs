@@ -6,14 +6,15 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class StarDisplay : MonoBehaviour 
 {
-    private Text starText;
-    private int stars = 0;
+    public enum Status { SUCCESS, FAILURE };
 
-    // Use this for initialization
-	void Start () 
+    private Text starTotal;
+    private int stars = 100;
+
+    void Start () 
     {
-        starText = GetComponent<Text>();
-        print(starText);
+        starTotal = GetComponent<Text>();
+        UpdateDisplay();
 	}
 	
 
@@ -23,14 +24,19 @@ public class StarDisplay : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void UseStars(int amount)
+    public Status UseStars(int amount)
     {
-        stars -= amount;
-        UpdateDisplay();
+        if (stars >= amount)
+        {
+            stars -= amount;
+            UpdateDisplay();
+            return Status.SUCCESS;
+        }
+        return Status.FAILURE;
     }
 
     private void UpdateDisplay()
     {
-        starText.text = stars.ToString();
+        starTotal.text = stars.ToString();
     }
 }
