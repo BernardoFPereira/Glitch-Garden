@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class StarDisplay : MonoBehaviour 
 {
     public enum Status { SUCCESS, FAILURE };
+    public int stars = 100;
+
 
     private Text starTotal;
-    private int stars = 100;
 
     void Start () 
     {
