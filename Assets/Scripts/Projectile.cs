@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
     {
         Attacker attacker = collision.gameObject.GetComponent<Attacker>();
         Health health = collision.gameObject.GetComponent<Health>();
+
         if(attacker && health)
         {
             health.DealDamage(damage);
